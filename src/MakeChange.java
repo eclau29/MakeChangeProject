@@ -11,7 +11,7 @@ public class MakeChange {
 		String contOrStop = kb.next();
 		do {
 			runMakerOfChange(kb);
-		} while (contOrStop == "Y");
+		} while (contOrStop.equalsIgnoreCase("Y"));
 		
 		
 		kb.close();
