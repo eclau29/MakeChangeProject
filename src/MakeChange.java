@@ -20,7 +20,7 @@ public class MakeChange {
 	}
 	public static String contOrStop (Scanner kb) {
 		
-		System.out.print("I have given you correct change. Would you like to make another transaction? (Y/N): ");
+		System.out.print("Would you like to make another transaction? (Y/N): ");
 		String answer = kb.next();
 		
 		return answer;
@@ -54,57 +54,57 @@ public class MakeChange {
 			if ((change / 10) >= 1) {
 				double num10s = change / 10;
 				int qty10s = (int) (num10s);
-				System.out.println("Here are " + qty10s + " $10 bills.");
+				System.out.println("I am giving you " + qty10s + " $10 bill(s).");
 				change = ((num10s - qty10s) * 10);
-				System.out.printf("Change left = %.2f\n", change);
+//				System.out.printf("Change left = %.2f\n", change);
 			}
 			if ((change / 5) >= 1) {
 				double num5s = change / 5;
 				int qty5s = (int) (num5s);
-				System.out.println("Here are " + qty5s + " $5 bills.");
+				System.out.println("I am giving you " + qty5s + " $5 bill(s).");
 				change = ((num5s - qty5s) * 5);
-				System.out.printf("change left = %.2f\n", change);
+//				System.out.printf("change left = %.2f\n", change);
 			}
 			if ((change / 1) >= 1) {
 				double num1s = change / 1;
 				int qty1s = (int) (num1s);
-				System.out.println("Here are " + qty1s + " $1 bills.");
+				System.out.println("I am giving you " + qty1s + " $1 bill(s).");
 				change = ((num1s - qty1s) * 1);
-				System.out.printf("change left = %.2f\n", change);
+//				System.out.printf("change left = %.2f\n", change);
 			}
 			if ((change / .25) >= 1) {
 				double numQtrs = change / .25;
 				int qtyQtrs = (int) (numQtrs);
-				System.out.println("here are " + qtyQtrs + " quarters.");
+				System.out.println("I am giving you " + qtyQtrs + " quarter(s).");
 				change = ((numQtrs - qtyQtrs) * 0.25);
-				System.out.printf("change left = %.2f\n", change);
+//				System.out.printf("change left = %.2f\n", change);
 			}
 			if ((change / .1) >= 1) {
 				double numDimes = change / .1;
 				int qtyDimes = (int) (numDimes);
-				System.out.println("Here are " + qtyDimes + " dimes.");
+				System.out.println("I am giving you " + qtyDimes + " dime(s(.");
 				change = ((numDimes - qtyDimes) * .1);
-				System.out.printf("Remaining change = %.2f\n", change);
+//				System.out.printf("Remaining change = %.2f\n", change);
 			}
 			if ((change / .05) >= 1) {
 				double numNicks = change / .05;
 				int qtyNicks = (int) (numNicks);
-				System.out.println("Here are " + qtyNicks + " nickels.");
+				System.out.println("I am giving you " + qtyNicks + " nickel(s).");
 				change = ((numNicks - qtyNicks) * .05);
-				System.out.printf("Remaining change = %.2f\n", change);
+//				System.out.printf("Remaining change = %.2f\n", change);
 			}
 			if ((change / .01) >= 1) {
 				double numPenns = change / .01;
 				int qtyPenns = (int) (numPenns);
-				System.out.println("Here are " + qtyPenns + " pennies.");
+				System.out.println("I am giving you " + qtyPenns + " penny/pennies.");
 				change = ((numPenns - qtyPenns) * .05);
-				System.out.printf("Remaining change = %.2f\n", change);
+//				System.out.printf("Remaining change = %.2f\n", change);
 			}
 		}
 	}
 
 	public static double getPrice(Scanner kb) {
-		System.out.print("How much is your item? (lease omit any '$' signs): ");
+		System.out.print("How much is your item? (please omit any '$' signs): ");
 
 		double price = kb.nextDouble();
 
