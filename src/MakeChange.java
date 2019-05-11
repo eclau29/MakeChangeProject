@@ -5,16 +5,25 @@ public class MakeChange {
 	public static void main(String[] args) {
 		Scanner kb = new Scanner(System.in);
 		
-		runMakerOfChange(kb);
-		
-		System.out.print("I have given you correct change. Would you like to make another transaction? (Y/N): ");
-		String contOrStop = kb.next();
+		String contOrStop;
 		do {
 			runMakerOfChange(kb);
+			contOrStop = contOrStop(kb);
+			
 		} while (contOrStop.equalsIgnoreCase("Y"));
+		if (contOrStop.equalsIgnoreCase("n")) {
+			System.out.println("Thank you for shopping with us! Come back soon :)");
+		}
 		
 		
 		kb.close();
+	}
+	public static String contOrStop (Scanner kb) {
+		
+		System.out.print("I have given you correct change. Would you like to make another transaction? (Y/N): ");
+		String answer = kb.next();
+		
+		return answer;
 	}
 
 	public static void runMakerOfChange(Scanner kb) {
@@ -31,21 +40,16 @@ public class MakeChange {
 		}
 	}
 
-//		User Story #4
-//		If the amount tendered is more than the cost of the item, display the number of bills and coins that should be given to the customer.
 	private static void makeChange(double price, double finalTender) {
-//		System.out.println("*makes change*"); USED THIS TO MAKE SURE EXECUTING DURING CORRECT SITUATIONS
 		if (price < finalTender) {
-			double change = (finalTender - price) + 0.0001;
+			double change = (finalTender - price) + 0.0001; // gives a change value that factors in the lack of precision when dealing with doubles
 			if ((change / 20) >= 1) {
 				double num20s = change / 20;
-//				System.out.println(num20s); //prints out correct double
 				int qty20s = (int) (num20s);
 				System.out.println("Here are " + qty20s + " $20 bills");
-				change = ((num20s - qty20s) * 20); // helps factor in the lack of precision when dealing with
-													// doubles
-				System.out.printf("change left = %.2f\n", change); // prints out the remaining change left to two
-			} // decimal places
+				change = ((num20s - qty20s) * 20); 
+				System.out.printf("change left = %.2f\n", change); // prints out the remaining change left to two decimal places
+			} 
 
 			if ((change / 10) >= 1) {
 				double num10s = change / 10;
@@ -100,7 +104,7 @@ public class MakeChange {
 	}
 
 	public static double getPrice(Scanner kb) {
-		System.out.print("Welcome to Check-Out!\nHow much is your item (please omit any '$' signs): ");
+		System.out.print("How much is your item? (lease omit any '$' signs): ");
 
 		double price = kb.nextDouble();
 
@@ -115,12 +119,10 @@ public class MakeChange {
 	}
 
 	public static double payMe(Scanner kb, double price, double tender) {
-//	
 		while (tender < price) {
 			System.out.println("Please insert more money; how much more did you insert?");
 			double nextTender = kb.nextDouble();
 			tender += nextTender;
-//			System.out.println(tender);
 		}
 		return tender;
 	}

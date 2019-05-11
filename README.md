@@ -22,3 +22,4 @@ This is [Skill Distillery](https://skilldistillery.com) Week 1 Homework.
 * A possible method to correct the precision error inherent in double data types
 * How to successfully restructure code into several methods for more efficient editing
 * How to successfully send arguments/Objects to method parameters
+* How to create and push files to GitHub
